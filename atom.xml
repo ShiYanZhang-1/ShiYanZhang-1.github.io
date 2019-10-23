@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>誓言的博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-10-23T02:09:37.507Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>誓言</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>代码的颜色</title>
+    <link href="http://yoursite.com/2019/10/23/%E4%BB%A3%E7%A0%81%E7%9A%84%E9%A2%9C%E8%89%B2/"/>
+    <id>http://yoursite.com/2019/10/23/代码的颜色/</id>
+    <published>2019-10-23T02:06:50.628Z</published>
+    <updated>2019-10-23T02:09:37.507Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="代码中的颜色表示"><a href="#代码中的颜色表示" class="headerlink" title="代码中的颜色表示"></a>代码中的颜色表示</h2><a id="more"></a><blockquote><p><strong>颜色代码:颜色代码:红色#FF0000 深紫色 #871F78 褐红色 #8E236B 石英色 #D9D9F3绿色#00FF00 深石板蓝 #6B238E 中海蓝色 #32CD99 艳蓝色 #5959AB蓝色#0000FF 深铅灰色 #2F4F4F 中蓝色 #3232CD 鲑鱼色 #6F4242牡丹红 #FF00FF 深棕褐色 #97694F 中森林绿 #6B8E23 猩红色 #BC1717青色#00FFFF 深绿松石色 #7093DB 中鲜黄色 #EAEAAE 海绿色 #238E68黄色#FFFF00 暗木色 #855E42 中兰花色 #9370DB 半甜巧克力色 #6B4226黑色#000000 淡灰色 #545454 中海绿色 #426F42 赭色 #8E6B23海蓝#70DB93 土灰玫瑰红色 #856363 中石板蓝色 #7F00FF 银色 #E6E8FA巧克力色 #5C3317 长石色 #D19275 中春绿色 #7FFF00 天蓝 #3299CC蓝紫色 #9F5F9F 火砖色 #8E2323 中绿松石色 #70DBDB 石板蓝 #007FFF黄铜色 #B5A642 森林绿 #238E23 中紫红色 #DB7093 艳粉红色 #FF1CAE亮金色 #D9D919 金色 #CD7F32 中木色 #A68064 春绿色 #00FF7F棕色#A67D3D 鲜黄色 #DBDB70 深藏青色 #2F2F4F 钢蓝色 #236B8E青铜色 #8C7853 灰色 #C0C0C0 海军蓝 #23238E 亮天蓝色 #38B0DE2号青铜色 #A67D3D 铜绿色 #527F76 霓虹篮 #4D4DFF 棕褐色 #DB9370士官服蓝色 #5F9F9F 青黄色 #93DB70 霓虹粉红 #FF6EC7 紫红色 #D8BFD8冷铜色 #D98719 猎人绿 #215E21 新深藏青色 #00009C 石板蓝色 #ADEAEA铜色#B87333 印度红 #4E2F2F 新棕褐色 #EBC79E 浓深棕色 #5C4033珊瑚红 #FF7F00 土黄色 #9F9F5F 暗金黄色 #CFB53B 淡浅灰色 #CDCDCD紫蓝色 #42426F 浅蓝色 #C0D9D9 橙色 #FF7F00 紫罗兰色 #4F2F4F深棕#5C4033 浅灰色 #A8A8A8 橙红色 #FF2400 紫罗兰红色 #CC3299深绿#2F4F2F 浅钢蓝色 #8F8FBD 淡紫色 #DB70DB 麦黄色 #D8D8BF深铜绿色 #4A766E 浅木色 #E9C2A6 浅绿色 #8FBC8F 黄绿色 #99CC32深橄榄绿 #4F4F2F 石灰绿色 #32CD32 粉红色 #BC8F8F深兰花色 #9932CD 桔黄色 #E47833 李子色 #EAADEA</strong></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;代码中的颜色表示&quot;&gt;&lt;a href=&quot;#代码中的颜色表示&quot; class=&quot;headerlink&quot; title=&quot;代码中的颜色表示&quot;&gt;&lt;/a&gt;代码中的颜色表示&lt;/h2&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo踩坑</title>
+    <link href="http://yoursite.com/2019/10/23/Hexo%E8%B8%A9%E5%9D%91/"/>
+    <id>http://yoursite.com/2019/10/23/Hexo踩坑/</id>
+    <published>2019-10-23T01:55:55.403Z</published>
+    <updated>2019-10-23T01:56:25.165Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hexo踩坑记录"><a href="#Hexo踩坑记录" class="headerlink" title="Hexo踩坑记录"></a>Hexo踩坑记录</h2><blockquote><p>$ hexo d (提交到github)<br>    提示错误信息如下：<br><strong>ERROR Deployer not found: git</strong></p></blockquote><p>解决方案</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install  --save  hexo-deployer-git</span><br></pre></td></tr></table></figure><a id="more"></a><h4 id="错误记录2"><a href="#错误记录2" class="headerlink" title="错误记录2"></a>错误记录2</h4><blockquote><p>在使用ssh加公钥认证时会输入 ssh -T Github.com，认证成功后会输出如下Log。<br>“but GitHub does not provide shell access ”这句话的意思是，GitHub不提供shell（ssh）访问/接入权限。<br>    ssh -T选项的意思为，不分配伪终端。<br>    当你在使用ssh协议连接到自己或者其他服务器时，本地终端会显示命令提示符，你可以在上面操作输入命令ls等。<br>    结合上面几点，这句话的意思即为你无法使用ssh协议直接登录github，在github服务器上建立一个伪终端，并进行操作。&gt;<br>    所以，这句提示并不是一个错误，而是github输出的一句提示语。</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Hexo踩坑记录&quot;&gt;&lt;a href=&quot;#Hexo踩坑记录&quot; class=&quot;headerlink&quot; title=&quot;Hexo踩坑记录&quot;&gt;&lt;/a&gt;Hexo踩坑记录&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;$ hexo d (提交到github)&lt;br&gt;    提示错误信息如下：&lt;br&gt;&lt;strong&gt;ERROR Deployer not found: git&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;解决方案&lt;/p&gt;
+&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm install  --save  hexo-deployer-git&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>

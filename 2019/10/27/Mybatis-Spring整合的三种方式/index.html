@@ -6,15 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/10 | 誓言的博客</title>
+  <title>Mybatis-Spring整合的三种方式 | 誓言的博客</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="誓言的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2019&#x2F;10&#x2F;index.html">
+  <meta name="description" content="Mybatis-Spring整合的三种方式接口类 1234567891011package com.shiyan.dao;import com.shiyan.pojo.Books;import org.apache.ibatis.annotations.Param;import java.util.List;public interface BooksMapper &amp;#123;    &#x2F;&#x2F;增加一本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mybatis-Spring整合的三种方式">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;10&#x2F;27&#x2F;Mybatis-Spring%E6%95%B4%E5%90%88%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F&#x2F;index.html">
 <meta property="og:site_name" content="誓言的博客">
+<meta property="og:description" content="Mybatis-Spring整合的三种方式接口类 1234567891011package com.shiyan.dao;import com.shiyan.pojo.Books;import org.apache.ibatis.annotations.Param;import java.util.List;public interface BooksMapper &amp;#123;    &#x2F;&#x2F;增加一本">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-27T03:48:50.849Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="誓言的博客" type="application/atom+xml">
@@ -189,118 +192,276 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Mybatis-Spring整合的三种方式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+    <h1 class="article-title" itemprop="name">
+      Mybatis-Spring整合的三种方式
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2019/10/27/Mybatis-Spring%E6%95%B4%E5%90%88%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" class="archive-article-date">
         <time datetime="2019-10-27T03:46:23.590Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-27</time>
 </a>
 
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">753字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">3分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="Mybatis-Spring整合的三种方式"><a href="#Mybatis-Spring整合的三种方式" class="headerlink" title="Mybatis-Spring整合的三种方式"></a>Mybatis-Spring整合的三种方式</h2><p><strong>接口类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shiyan.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.shiyan.pojo.Books;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.annotations.Param;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BooksMapper</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//增加一本书</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">addBook</span><span class="params">(Books book)</span></span>;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+
+
+
+<p><strong>接口的实现类</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.shiyan.dao;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.shiyan.pojo.Books;</span><br><span class="line"><span class="keyword">import</span> org.apache.ibatis.session.SqlSession;</span><br><span class="line"><span class="keyword">import</span> org.mybatis.spring.support.SqlSessionDaoSupport;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BooksMapperImpl</span> <span class="keyword">extends</span> <span class="title">SqlSessionDaoSupport</span> <span class="keyword">implements</span> <span class="title">BooksMapper</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">addBook</span><span class="params">(Books book)</span> </span>&#123;</span><br><span class="line">        SqlSession sqlSession = <span class="keyword">this</span>.getSqlSession();</span><br><span class="line">        <span class="keyword">return</span> sqlSession.insert(<span class="string">"addBook"</span>, book);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="一-Mybatis-Spring–有Mapper实现类，无实现类，和扫描接口"><a href="#一-Mybatis-Spring–有Mapper实现类，无实现类，和扫描接口" class="headerlink" title="一.Mybatis-Spring–有Mapper实现类，无实现类，和扫描接口"></a>一.Mybatis-Spring–有Mapper实现类，无实现类，和扫描接口</h4><p><strong>1.applicationContext.xml配置文件</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=<span class="string">"1.0"</span> encoding=<span class="string">"UTF-8"</span> ?&gt;</span><br><span class="line">&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span></span><br><span class="line">       xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span><br><span class="line">       xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span></span><br><span class="line">       xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans</span></span><br><span class="line"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd</span></span><br><span class="line"><span class="string">        http://www.springframework.org/schema/context</span></span><br><span class="line"><span class="string">        https://www.springframework.org/schema/context/spring-context.xsd"</span>&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--<span class="number">1</span>.关联数据库配置文件，自动读取properties配置文件--&gt;</span><br><span class="line">    &lt;context:property-placeholder location=<span class="string">"classpath:database.properties"</span>/&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--<span class="number">2</span>.连接池</span><br><span class="line">            dbcp:半自动化，不能自动连接</span><br><span class="line">            c3p0:自动化操作，（自动化的加载配置文件，并且可以自动设置到对象中！）</span><br><span class="line">            durid:  hikari</span><br><span class="line">    --&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"dataSource"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.mchange.v2.c3p0.ComboPooledDataSource"</span>&gt;</span><br><span class="line">        &lt;!--同过关联的数据库配置文件就可以通过数据库文件中的key====$&#123;jdbc.driver&#125;获取到相应的value--&gt;</span><br><span class="line">        &lt;property name="driverClass" value="$&#123;jdbc.driver&#125;"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="jdbcUrl" value="$&#123;jdbc.url&#125;"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="user" value="$&#123;jdbc.username&#125;"&gt;&lt;/property&gt;</span><br><span class="line">        &lt;property name="password" value="$&#123;jdbc.password&#125;"&gt;&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- c3p0连接池的私有属性 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"maxPoolSize"</span> value=<span class="string">"30"</span>/&gt;</span><br><span class="line">        &lt;property name=<span class="string">"minPoolSize"</span> value=<span class="string">"10"</span>/&gt;</span><br><span class="line">        &lt;!-- 关闭连接后不自动commit --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"autoCommitOnClose"</span> value=<span class="string">"false"</span>/&gt;</span><br><span class="line">        &lt;!-- 获取连接超时时间 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"checkoutTimeout"</span> value=<span class="string">"10000"</span>/&gt;</span><br><span class="line">        &lt;!-- 当获取连接失败重试次数 --&gt;</span><br><span class="line">        &lt;property name=<span class="string">"acquireRetryAttempts"</span> value=<span class="string">"2"</span>/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!--<span class="number">3</span>.创建sqlSessionFactory对象--&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"sqlSessionFactory"</span> <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span><br><span class="line">        &lt;property name=<span class="string">"dataSource"</span> ref=<span class="string">"dataSource"</span> /&gt;</span><br><span class="line">        &lt;!--配置Mybatis配置文件--&gt;</span><br><span class="line">        &lt;property name="configLocation" value="classpath:mybatis-config.xml"&gt;&lt;/property&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">	</span><br><span class="line">	 &lt;!--<span class="number">4</span>.整合方式一===配置Mapper接口的实现类</span><br><span class="line">            创建接口的实现类，注入sqlSessionFactory--&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"booksMapperImpl"</span>  <span class="class"><span class="keyword">class</span></span>=<span class="string">"com.shiyan.dao.BooksMapperImpl"</span>&gt;</span><br><span class="line">        &lt;!--关联sqlSessionFactory--&gt;</span><br><span class="line">        &lt;property name=<span class="string">"sqlSessionFactory"</span> ref=<span class="string">"sqlSessionFactory"</span>/&gt;</span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line"></span><br><span class="line">	&lt;!--<span class="number">4.2</span>整合方式三===配置Mapper接口</span><br><span class="line">            配置mapper接口，注入sqlSessionFactory--&gt;</span><br><span class="line">    &lt;bean id=<span class="string">"BooksMapper"</span>  <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.mybatis.spring.mapper.MapperFactoryBean"</span>&gt;</span><br><span class="line">        &lt;!--关联mapper接口--&gt;</span><br><span class="line">        &lt;property name=<span class="string">"mapperInterface"</span>  value=<span class="string">"com.shiyan.dao.BooksMapper"</span>/&gt;</span><br><span class="line">        &lt;!--关联sqlSessionFactory--&gt;</span><br><span class="line">        &lt;property name=<span class="string">"sqlSessionFactory"</span> ref=<span class="string">"sqlSessionFactory"</span>/&gt;</span><br><span class="line">        </span><br><span class="line">	&lt;!--此配置是最常用的，相比于第二种方式，可以一次加载多个mapper接口，每一个mapper接口在spring容器中的id为该类的类名首字母小写。接口BooksMapper就是bookMapper--&gt;</span><br><span class="line"> &lt;!--<span class="number">4.3</span>整合方式三===配置dao扫描包，动态的实现了Dao接口可以注入到spring容器中--&gt;</span><br><span class="line">    &lt;bean <span class="class"><span class="keyword">class</span></span>=<span class="string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span><br><span class="line">        &lt;!--注入sqlSessionFactory--&gt;</span><br><span class="line">        &lt;property name=<span class="string">"sqlSessionFactoryBeanName"</span> value=<span class="string">"sqlSessionFactory"</span>/&gt;</span><br><span class="line">        &lt;!--要扫描的dao包--&gt;</span><br><span class="line">        &lt;property name="basePackage" value="com.shiyan.dao"&gt;&lt;/property&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/bean&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+    
+
+    
+    <div class="page-reward">
+      <a href="javascript:void(0);" class="page-reward-btn tooltip-top" target="_self">
+        <div class="tooltip tooltip-east">
+          <span class="tooltip-item">
+            赏
+          </span>
+          <span class="tooltip-content">
+            <span class="tooltip-text">
+              <span class="tooltip-inner">
+                <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i
+                    class="icon icon-quo-right"></i></p>
+                <div class="reward-box">
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/alipay.jpg">
+                    <span class="reward-type">支付宝</span>
+                  </div>
+                  
+                  
+                  <div class="reward-box-item">
+                    <img class="reward-img" src="/img/weixin.png">
+                    <span class="reward-type">微信</span>
+                  </div>
+                  
+                </div>
+              </span>
+            </span>
+          </span>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/10/27/Mybatis-Spring%E6%95%B4%E5%90%88%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" target="_blank">Mybatis-Spring整合的三种方式</a>
-  
-    </h1>
-  
+      </a>
+    </div>
+    
 
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          誓言
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://yoursite.com/2019/10/27/Mybatis-Spring整合的三种方式/" title="Mybatis-Spring整合的三种方式" target="_blank">http://yoursite.com/2019/10/27/Mybatis-Spring整合的三种方式/</a>
+        </li>
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+      </ul>
+    </div>
+    
 
-        <div class="article-info info-on-right">
-          
-          
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/10/27/Mybatis-Spring%E6%95%B4%E5%90%88%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/10/23/%E4%BB%A3%E7%A0%81%E7%9A%84%E9%A2%9C%E8%89%B2/" class="archive-article-date">
-        <time datetime="2019-10-23T02:06:50.628Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/23/%E4%BB%A3%E7%A0%81%E7%9A%84%E9%A2%9C%E8%89%B2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">代码的颜色</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/10/23/%E4%BB%A3%E7%A0%81%E7%9A%84%E9%A2%9C%E8%89%B2/" target="_blank">代码的颜色</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Mybatis-Spring整合的三种方式"><span class="toc-number">1.</span> <span class="toc-text">Mybatis-Spring整合的三种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#一-Mybatis-Spring–有Mapper实现类，无实现类，和扫描接口"><span class="toc-number">1.0.1.</span> <span class="toc-text">一.Mybatis-Spring–有Mapper实现类，无实现类，和扫描接口</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/10/23/Hexo%E8%B8%A9%E5%9D%91/" class="archive-article-date">
-        <time datetime="2019-10-23T01:55:55.403Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-23</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/10/23/Hexo%E8%B8%A9%E5%9D%91/" target="_blank">Hexo踩坑</a>
-  
-    </h1>
-  
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
+
+<div id="SOHUCS" sid="Mybatis-Spring整合的三种方式" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
+
+
+
+
+
+
+
   
+  <div id="gitment-ctn"></div>
   
-    </div></section>
+    <!-- 中文 -->
+    <link rel="stylesheet" href="/lib/gitment.css">
+    <script src="/lib/gitment.js"></script>
+  
+  <script>
+    <!-- id: "Mybatis-Spring整合的三种方式" -->
+    var gitment = new Gitment({
+      id: "20191027114623",
+      owner: 'ShiYanZhang-1',
+      repo: 'yilia-plus',
+      oauth: {
+        client_id: ' 541143cb017d3127c962',
+        client_secret: '0f7f3ebb1f8a482f6bb06cd3f23406c6d1be2de9',
+      },
+    })
+    gitment.render('gitment-ctn')
+  </script>
+
+
   
 
-    
 
 
           </div>
@@ -341,8 +502,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,

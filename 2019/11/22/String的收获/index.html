@@ -18,7 +18,7 @@
 <meta property="og:description" content="String的收获String str1 = “123”;和String str2 = new String(“123”);1.String str1 = “123”; 最多创建一个String的对象，如果常量池已经存在“123”，就不需要new String().直接从常量池中获取该值。如果常量池中没有该对象就new String(“123”);并开辟空间加载到常量中便于以后调用">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191122164318131.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTAxODQ0NA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-22T08:59:47.766Z">
+<meta property="og:updated_time" content="2019-11-22T10:04:08.838Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191122164318131.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTAxODQ0NA==,size_16,color_FFFFFF,t_70">
   
@@ -227,7 +227,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">169字</span>
+      <span class="post-count">457字</span>
     </span>
   </span>
 
@@ -258,7 +258,16 @@
 <p>最多创建两个String对象，最少创建一个String对象。<br>只要有 <strong>new</strong> 关键字就会在堆内存中开辟一个空间，在判断常量池中是否存在该常量“123”，如果不存在就会在常量池中new一个对象并保存在常量池中</p>
 </blockquote>
 <p><img src="https://img-blog.csdnimg.cn/20191122164318131.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NTAxODQ0NA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-
+<h3 id="二，"><a href="#二，" class="headerlink" title="二，"></a>二，</h3><ol>
+<li>单独使用“”引号创建的字符串都是直接量，编译时期就确定加入到常量池中</li>
+<li>使用new String(“”)创建的对象会储存到堆内存中，运行时期才创建</li>
+<li>使用只包含直接量的字符串连接符如“aa”+”bb”创建的也是直接量，编译期就能确定</li>
+<li>使用包含String直接量（无final修饰符）的字符串表达式  如“aa”+str;创建的对象是运行期创建的，储存在堆内存中</li>
+</ol>
+<blockquote>
+<p>通过变量或者调用方法去拼接字符串，都是在运行时期才能确定变量的值和方法的返回值，没有编译优化的操作。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">getStr</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="string">"AB"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">	String str1 = <span class="string">"ABCD"</span>;</span><br><span class="line">	String str2 = <span class="string">"A"</span>+<span class="string">"B"</span>+<span class="string">"C"</span>+<span class="string">"D"</span>;<span class="comment">//编译优化，编译时期优化为“ABCD”</span></span><br><span class="line">	String str3 = <span class="string">"AB"</span>+<span class="string">"CD"</span>;     <span class="comment">//编译优化，编译时期优化为“ABCD”</span></span><br><span class="line">	String str4 = <span class="keyword">new</span> String(<span class="string">"ABCD"</span>);<span class="comment">//无编译优化，编译时期为String对象</span></span><br><span class="line">	String temp= <span class="string">"AB"</span>;</span><br><span class="line">	String str5 = temp + <span class="string">"CD"</span>;<span class="comment">//无编译优化，</span></span><br><span class="line">	String str6 = getStr() + <span class="string">"CD"</span>;<span class="comment">//无编译优化，</span></span><br><span class="line">	System.out.println(</span><br><span class="line">		str1 == str2;   <span class="comment">//true</span></span><br><span class="line">		str1 == str3;	<span class="comment">//true</span></span><br><span class="line">		str1 == str4;	<span class="comment">//false</span></span><br><span class="line">		str1 == str5;	<span class="comment">//false</span></span><br><span class="line">		str1 == str6;	<span class="comment">//false</span></span><br><span class="line">	); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
 
     
@@ -412,7 +421,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#String的收获"><span class="toc-number">1.</span> <span class="toc-text">String的收获</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-str1-“123”-和String-str2-new-String-“123”"><span class="toc-number">1.1.</span> <span class="toc-text">String str1 = “123”;和String str2 = new String(“123”);</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-String-str1-“123”"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.String str1 = “123”;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-String-str2-new-String-“123”"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.String str2 = new String(“123”);</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#String的收获"><span class="toc-number">1.</span> <span class="toc-text">String的收获</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#String-str1-“123”-和String-str2-new-String-“123”"><span class="toc-number">1.1.</span> <span class="toc-text">String str1 = “123”;和String str2 = new String(“123”);</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-String-str1-“123”"><span class="toc-number">1.1.1.</span> <span class="toc-text">1.String str1 = “123”;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-String-str2-new-String-“123”"><span class="toc-number">1.1.2.</span> <span class="toc-text">2.String str2 = new String(“123”);</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，"><span class="toc-number">1.2.</span> <span class="toc-text">二，</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
